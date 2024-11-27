@@ -3,28 +3,32 @@
 #then, pointer moves through both haystack and needle. if needle reaches the end without it stopping, get the index when it first hits the haystack 
 #else, it breaks, and the pointer at the needle restarts at needle[0], and process repeats again 
 
-haystack='sadbuttrue'
-needle='true'
+haystack='true'
+needle='sadbuttrue'
 
 j=0 #needle pointer
 index=[]
-for i in range(len(haystack)):
-    if j<len(needle) and i+1<len(haystack):
-        if haystack[i]==needle[j] and haystack[i+1]!=needle[j]:
-            index.append(i)
-            j+=1
-        elif haystack[i]==needle[j] and haystack[i+1]==needle[j]:
-            i+=1
+if len(haystack)>len(needle):
+    for i in range(len(haystack)):
+        if j<len(needle) and i+1<len(haystack):
+            if haystack[i]==needle[j] and haystack[i+1]!=needle[j]:
+                index.append(i)
+                j+=1
+            elif haystack[i]==needle[j] and haystack[i+1]==needle[j]:
+                i+=1
 
-        else:
-            j=0
-            index=[]
+            else:
+                j=0
+                index=[]
+    if index!=[]:
+        print(index[0])
+    else:
+        print(-1)
 
-
-if index!=[]:
-    print(index[0])
 else:
-    print(-1)
+    print('Needle longer than haystack')
+
+
 
 
 #in this code, it doesnt work if the letters all start with the beginning of the needle, works for other scenarios tho 
