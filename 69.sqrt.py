@@ -11,5 +11,5 @@ def sqrt_newton(num, precision=0.0001):
         guess = (guess + num / guess) / 2.0 
     return guess
 
-number = 577
+number = 57
 print(math.floor(sqrt_newton(number)))
