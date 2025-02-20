@@ -8,3 +8,10 @@ and each row start and ends with 1. always.
 [[1],[1,1],[1,2,1],[1,3,3,1]]
 '''
 pascal = [[1],[1,1]] 
+'''
+logc
+
+make a sub list, start and end it with 1 
+
+
+'''
