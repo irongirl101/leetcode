@@ -14,12 +14,13 @@ logc
 make a sub list, start and end it with 1 
 
 '''
-n = 5 # number of rows 
+n = 6 # number of rows 
 pascal = [[1]]
 
 i = 2 
 
 while True:
+    j = 0
     sub = [] #row in pascal
     l = pascal[-1] #last row in pascal 
     for k in range(i): #0,1,2
