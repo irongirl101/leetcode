@@ -14,25 +14,20 @@ logc
 make a sub list, start and end it with 1 
 
 '''
-n = 6 # number of rows 
+n = 7
 pascal = [[1]]
-
 i = 2 
-
 while True:
     j = 0
     sub = [] #row in pascal
-    l = pascal[-1] #last row in pascal 
-    for k in range(i): #0,1,2
+    l = pascal[-1] #last row in pascal
+    for k in range(i): 
         if k == 0: 
             sub.append(1)
         elif k == i-1: 
             sub.append(1)
         else: 
-            for z in range(i): 
-                print(z)
-                if z+1<len(l):
-                    sub.append(l[z]+l[z+1])
+           sub.append(l[k-1] + l[k])
     pascal.append(sub)
     i+=1
     if i == n+1:
