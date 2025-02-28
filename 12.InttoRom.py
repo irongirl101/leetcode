@@ -86,7 +86,7 @@ if thousands or hund or tens or ones:
         rom+=convert(ones)
     else:
         pass
-
+#will come back, still more or less done (very annoying to finish)
 
     '''if hund == 4: 
         rom += (d[100]+d[500])
