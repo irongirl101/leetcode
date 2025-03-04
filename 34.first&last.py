@@ -15,6 +15,8 @@ else:
     print([ans[0],ans[-1]])
 
 #runtime complexity o(log(n))
+'''idea : double binary tree 
+'''
 
 
 
