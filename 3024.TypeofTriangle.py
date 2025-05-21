@@ -21,7 +21,7 @@ def count_occurences(data,element):
             count+=1 
     return count
 
-nums = [1,2,1]
+nums = [2,3,1]
 #to check whether a triangle can be formed with those sides 
 if ((nums[0]+nums[1])>nums[2]) and ((nums[0]+nums[2])>nums[1]) and ((nums[1]+nums[2])>nums[0]): 
     #print("Triangle")
