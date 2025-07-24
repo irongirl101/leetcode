@@ -21,7 +21,7 @@ def count_occurences(data,element):
             count+=1 
     return count
 
-nums = [2,3,1]
+nums = [3,3,3]
 #to check whether a triangle can be formed with those sides 
 if ((nums[0]+nums[1])>nums[2]) and ((nums[0]+nums[2])>nums[1]) and ((nums[1]+nums[2])>nums[0]): 
     #print("Triangle")
@@ -42,5 +42,21 @@ if ((nums[0]+nums[1])>nums[2]) and ((nums[0]+nums[2])>nums[1]) and ((nums[1]+num
             print("scalene")
             break
     #print(counts)
-else: 
-    print("None") 
+#else: 
+    #print("None") 
+
+#will fix this, just basic ifs 
+'''for i in range(len(nums)):
+    for j in range(len(nums)): 
+        if nums[i]==nums[j] and i!=j: 
+            for k in range(len(nums)): 
+                if nums[j]==nums[k] and i!=k and j!=k:
+                    print("Eq")
+                    break
+                elif nums[j]!=nums[k] and i!=k and j!=k:
+                    print("Isco")
+                    break
+               '''
+            
+
+
