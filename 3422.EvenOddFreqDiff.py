@@ -2,9 +2,9 @@ s = "abcabcab"
 a1 = 0
 a2 = 0
 for i in range(len(s)): 
-    c=0
+    c=1
     p = s[i] 
-    for j in range(len(s)): 
+    for j in range(1+i, len(s)): 
         if p == s[j]: 
             c+=1
     if c%2==0 and c>a2: 
