@@ -25,7 +25,7 @@ int main(){
            if((!strcmp((char[]){ap, '\0'}, "0")) & !strcmp((char[]){bp, '\0'}, "0")){
                 final[i] = '0'; 
             }
-            else if(!strcmp((char[]){ap, '\0'}, "1") || !strcmp((char[]){bp, '\0'}, "1")) {
+            else if(  (!strcmp((char[]){ap, '\0'}, "1") & (!strcmp((char[]){bp,'\0'},"0")) )|| (!strcmp((char[]){bp, '\0'}, "1")&(!strcmp((char[]){ap, '\0'}, "0")))){
                 final[i] = '1'; 
             }
             else if(!strcmp((char[]){ap, '\0'}, "1") & (!strcmp((char[]){bp, '\0'}, "0"))){
@@ -34,10 +34,10 @@ int main(){
             }
         }
         else if(!strcmp((char[]){c, '\0'}, "1")){
-             if((!strcmp((char[]){ap, '\0'}, "0")) & !strcmp((char[]){bp, '\0'}, "0")){
+            if((!strcmp((char[]){ap, '\0'}, "0")) & !strcmp((char[]){bp, '\0'}, "0")){
             final[i] = '1'; 
             }
-            else if(!strcmp((char[]){ap, '\0'}, "1") || !strcmp((char[]){bp, '\0'}, "1")) {
+            else if(  (!strcmp((char[]){ap, '\0'}, "1") & (!strcmp((char[]){bp,'\0'},"0")) )|| (!strcmp((char[]){bp, '\0'}, "1")&(!strcmp((char[]){ap, '\0'}, "0")))){
                 final[i] = '1'; 
                 c='1'; 
             }
@@ -47,7 +47,9 @@ int main(){
             }
         
         }
-        //printf("%s\n",final); 
+        //printf("%d",c); 
+        
     }
-   
+    printf("%c",c);
+    printf("%s\n",final); 
 }
