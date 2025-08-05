@@ -2,7 +2,7 @@ fruits = [3,6,1]
 baskets = [6,4,7]
 
 #use A GREEDY ALG 
-#CHANGE THE ALREADY MATCHED UP TO A NUMBER LIKE -1 
+#CHANGE THE ALREADY MATCHED UP TO A NUMBER LIKE -1 so that they dont play a role in other iterations 
 
 count = 0
 for i in range(len(fruits)): 
