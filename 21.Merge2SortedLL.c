@@ -57,18 +57,12 @@ void Merge(struct Node**head1, struct Node**head2, struct Node**head){
     struct Node* temp1 = *head1; 
     struct Node* temp2 = *head2; 
     struct Node* temp = *head; 
-    while (temp1->link!=NULL)
-    {
-        if(temp1->data==temp2->data){
-            
-        }
-    }
     
-
 }
 int main(){
     struct Node* L1 = NULL; 
     struct Node* L2 = NULL; 
+    struct Node* Final = NULL; 
 
     InsertEnd(&L1,1); 
     InsertEnd(&L1,2); 
@@ -82,6 +76,9 @@ int main(){
 
     Display(&L1); 
     Display(&L2); 
+
+    Merge(&L1,&L2,&Final); 
+
 
 
 }
