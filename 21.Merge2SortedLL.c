@@ -56,29 +56,64 @@ int Count(struct Node**head){
 void Merge(struct Node**head1, struct Node**head2, struct Node**head){
     struct Node* temp1 = *head1; 
     struct Node* temp2 = *head2; 
-    struct Node* temp = *head; 
+    while (temp1->link!=NULL)
+    {
+        if(temp1->data==temp2->data){
+            int val1= temp1->data; 
+            int val2 = temp2->data; 
+            InsertEnd(head, val1); 
+            InsertEnd(head, val2); 
+            temp1 = temp1->link; 
+            temp2 = temp2->link; 
+            
+            
+        }
+        else if(temp1->data>temp2->data){
+            while(temp2->data<temp1->data){
+                printf("%d\n", temp2->data); 
+                int val1 = temp2->data; 
+                InsertEnd(head,val1); 
+                temp2= temp2->link; 
+            }
+            
+        }
+        else{
+            while(temp1->data<temp2->data){
+                int val1 = temp1->data; 
+                InsertEnd(head,val1); 
+                temp1=temp1->link;
+            }
+            
+        }
+            
+        }
+       
+        int val1 = temp1->data; 
+        InsertEnd(head,val1);
+    }
     
-}
+ 
+        
 int main(){
     struct Node* L1 = NULL; 
     struct Node* L2 = NULL; 
     struct Node* Final = NULL; 
 
     InsertEnd(&L1,1); 
-    InsertEnd(&L1,2); 
-    InsertEnd(&L1,4); 
+    InsertEnd(&L1,5); 
+    InsertEnd(&L1,6); 
 
     
     InsertEnd(&L2,1); 
     InsertEnd(&L2,3); 
-    InsertEnd(&L2,4); 
+    InsertEnd(&L2,5); 
 
 
     Display(&L1); 
     Display(&L2); 
 
     Merge(&L1,&L2,&Final); 
-
+    Display(&Final); 
 
 
 }
