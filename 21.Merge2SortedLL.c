@@ -58,14 +58,13 @@ void Merge(struct Node**head1, struct Node**head2, struct Node**head){
         }
         else if(temp1->data>temp2->data){
             while(temp2->data<temp1->data){
-                printf("%d\n", temp2->data); 
                 int val1 = temp2->data; 
                 InsertEnd(head,val1); 
                 temp2= temp2->link; 
             }
             
         }
-        else{
+        else if(temp1->data<temp2->data){
             while(temp1->data<temp2->data){
                 int val1 = temp1->data; 
                 InsertEnd(head,val1); 
@@ -75,9 +74,14 @@ void Merge(struct Node**head1, struct Node**head2, struct Node**head){
         }
             
         }
-       
-        int val1 = temp1->data; 
-        InsertEnd(head,val1);
+        if(temp1->link==NULL){
+            int val1 = temp1->data; 
+            InsertEnd(head,val1);}
+        else if(temp2->link==NULL){
+            int val1 = temp2->data; 
+            InsertEnd(head,val1);
+        }
+        
     }
     
  
@@ -88,20 +92,26 @@ int main(){
     struct Node* Final = NULL; 
 
     InsertEnd(&L1,1); 
-    InsertEnd(&L1,5); 
-    InsertEnd(&L1,6); 
+    InsertEnd(&L1,2); 
+    InsertEnd(&L1,4); 
 
-    
     InsertEnd(&L2,1); 
     InsertEnd(&L2,3); 
-    InsertEnd(&L2,5); 
+    InsertEnd(&L2,4); 
 
-
-    Display(&L1); 
-    Display(&L2); 
-
-    Merge(&L1,&L2,&Final); 
-    Display(&Final); 
+    if(L1==NULL && L2 == NULL){
+        printf("->\n"); 
+    }
+    else if (L1==NULL || L2 == NULL){
+        if(L1==NULL && L2 != NULL){
+            Display(&L2); 
+        }
+        else{
+            Display(&L1);
+        }
+    }
+    else{Merge(&L1,&L2,&Final); 
+    Display(&Final); }
 
 
 }
