@@ -39,19 +39,7 @@ void Display(struct Node** head){
     }
     printf("%d\n", temp->data); 
 }
-int Count(struct Node**head){
-    int count = 0; 
-    struct Node* temp = *head; 
-    while (temp->link!=NULL)
-    {
-        count+=1; 
-        temp=temp->link; 
-    }
 
-    return count; 
-    
-    
-}
 //head1->L1, head2->L2, head->final
 void Merge(struct Node**head1, struct Node**head2, struct Node**head){
     struct Node* temp1 = *head1; 
