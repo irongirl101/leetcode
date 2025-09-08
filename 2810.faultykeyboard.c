@@ -16,7 +16,7 @@ int main(){
     char str[] = "string"; 
     int len = 0;
     while (str[len] != '\0') len++;
-    char* s = (char*)malloc((len + 1) * sizeof(char));
+    char* s = (char*)malloc((len + 1) * sizeof(char));;
     for(int i = 0; i<sizeof(str); i++){
         if(str[i]!='i'){
             
