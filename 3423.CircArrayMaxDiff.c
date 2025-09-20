@@ -34,6 +34,6 @@ int main(){
                 greatest = nums[i]-nums[j];}
         }
     }
-    printf("%d", greatest); 
+    printf("%d\n", greatest); 
     return 0; 
 }
