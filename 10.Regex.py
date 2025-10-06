@@ -4,7 +4,24 @@ test_p = 0
 regex_p = 0 
 
 while test_p<len(test): 
-    if regex[regex_p+1]=="*" and regex_p+1 <len(regex) and regex[regex_p]!="*": 
+    if regex_p+1<len(regex) and regex[regex_p+1]=="*" :  
+        if test[test_p]==regex[regex_p]: 
+            while(test[test_p]==regex[regex_p]): 
+                print(regex[regex_p],test[test_p])
+                test_p+=1      
+    elif regex[regex_p]=="*": 
+        regex_p+=1 
+        test_p-=1
+    regex_p+=1
+    test_p+=1
+    
+    
+    
+    
+'''if regex[regex_p+1]=="*" and regex_p+1 <len(regex): 
+        print(regex[regex_p],test[test_p])
+        regex_p+=1
+        test_p+=1
         if test[test_p]!= regex[regex_p]: 
             regex_p+=1 
             continue 
@@ -17,5 +34,9 @@ while test_p<len(test):
     else: 
         if test[test_p] == regex[regex_p]: 
             test_p+=1 
-            regex_p+=1 
+            regex_p+=1 ''' 
+    
+
+    
+   
 
