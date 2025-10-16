@@ -1,5 +1,5 @@
-test = "b"
-regex = "b*"
+test = "aab"
+regex = "aab"
 
 
 def exp(test,regex):
