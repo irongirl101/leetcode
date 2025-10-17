@@ -18,27 +18,6 @@ void insertHead(struct Node** head, int data) {
     newnode->link = *head;
     *head = newnode;
 }
-
-void TwoSum(struct Node** head1,struct Node** head2){
-    struct Node* temp1 = *head1; 
-    struct Node* temp2 = *head2; 
-    struct Node**temp = NULL; 
-    while(temp1!=NULL || temp2!=NULL){
-        int sum_no_carry = temp1->data+temp2->data; 
-        if(sum_no_carry>=10){
-            int sum = sum_no_carry+1; 
-            int add = sum%10; 
-            insertHead(temp,add); 
-        }
-        else{
-            int sum = sum_no_carry; 
-            insertHead(temp,sum); 
-        }
-        temp1=temp1->link; 
-        temp2=temp2->link; 
-    }
-
-}
 void display(struct Node* head) {
     struct Node* temp = head;
     while (temp != NULL) {
@@ -47,6 +26,28 @@ void display(struct Node* head) {
     }
     
 }
+void TwoSum(struct Node** head1,struct Node** head2){
+    struct Node* temp1 = *head1; 
+    struct Node* temp2 = *head2; 
+    struct Node*temp = NULL; 
+    while(temp1!=NULL || temp2!=NULL){
+        int carry = 0; 
+        int sum_no_carry = temp1->data+temp2->data; 
+        if(sum_no_carry>=10){
+            int carry = sum_no_carry/10; 
+            //int sum = 
+            //insertHead(&temp,); 
+        }
+        else{
+            int sum = sum_no_carry+carry; 
+            insertHead(&temp,sum_no_carry); 
+        }
+        temp1=temp1->link; 
+        temp2=temp2->link; 
+    }
+    display(temp); 
+}
+
 int main() {
     struct Node* head1 = NULL;
     struct Node* head2 = NULL;
@@ -62,7 +63,7 @@ int main() {
     display(head2); 
     printf("\n");
 
-    //TwoSum(head1,head2); 
+    TwoSum(&head1,&head2); 
 
 
     return 0; 
