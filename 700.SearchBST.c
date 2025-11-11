@@ -20,4 +20,3 @@ struct tree* Search(struct tree* root, int data){
     return Search(root->right,data); 
     
 }
-
